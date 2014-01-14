@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="com.ebn.generator"
+    version="0.1.0">
+	<name>Generator</name>
+    <description>A phonegap plugin that fires JS methodcalls from native code</description>
+   
+   <js-module src="www/generator.js" name="Generator">
+        <clobbers target="window.generator" />
+    </js-module>
+	
+	 <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Generator">
+                <param name="android-package" value="com.ebn.generator.Generator"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="src/android/Generator.java" target-dir="src/com/ebn/generator" />      
+     </platform>          
+</plugin>
