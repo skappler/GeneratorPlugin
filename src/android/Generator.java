@@ -1,4 +1,4 @@
-package com.example.generatorplugin;
+package com.ebn.generator;
  
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -24,8 +24,11 @@ public class Generator extends CordovaPlugin{
 				
 					while(true){
 						fireEvent();
-						Thread.sleep(15000);
-
+						try{
+							Thread.sleep(15000);
+						}catch(Exception e){
+							continue;
+						}
 					}
 				
 				}
